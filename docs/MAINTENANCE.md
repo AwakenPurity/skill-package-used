@@ -1,51 +1,33 @@
-# 版本维护
+# 源码快照维护
 
-## 获取已记录的版本
-
-```bash
-git pull --ff-only
-git submodule update --init --recursive
-git submodule status
-```
-
-不要手工把子模块目录复制到别处后误以为依赖仍然完整。保留每个项目原有的目录结构、许可、资源和脚本。
-
-## 主动升级一个项目
-
-下面以 frontend-slides 为例；先确认子模块没有自己的未提交改动，再操作。
+## 日常获取
 
 ```bash
-git -C skills/frontend-slides status --short
-git -C skills/frontend-slides fetch origin main
-git -C skills/frontend-slides log --oneline HEAD..origin/main
+git clone https://github.com/AwakenPurity/skill-package-used.git
 ```
 
-阅读上游变更和许可证后，将该项目更新至确认过的提交：
+本仓库直接保存四个项目的实际源码。普通克隆及 GitHub 的 **Download ZIP** 都包含 Skill 文件，不需要子模块命令。已有本仓库时，检查自己的本地修改，再用 `git pull --ff-only` 同步。
 
-```bash
-git -C skills/frontend-slides checkout --detach origin/main
-git -C skills/frontend-slides rev-parse HEAD
-```
+## 更新一个项目
 
-将完整提交 SHA 同步写入根目录的 `skills.lock.json`，更新 `recorded_on`，并检查 README 的版本链接与能力说明。运行项目适用的校验后，只提交本次需要的文件：
+1. 查看 `skills.lock.json`，确认项目的上游地址、当前提交和本地目录。
+2. 阅读上游变更、许可及依赖说明，选定一个完整提交 SHA。
+3. 将该提交的源代码归档下载并解压到临时目录。
+4. 检查本仓库目标目录有无自己的改动；有改动时先备份或合并，不直接覆盖。
+5. 用归档中的完整项目内容替换对应 `skills/<name>/`，包含隐藏文件、模板、脚本、资源和许可证，但不包含源仓库的 `.git/` 历史。
+6. 核对文件清单与内容，更新 `skills.lock.json` 中的 `commit`、`source_tree` 和记录日期，并更新 README 中的版本链接、能力说明和许可入口。
+7. 运行适用的上游校验，再提交本次变更。
 
-```bash
-git add skills/frontend-slides skills.lock.json README.md
-git diff --cached --submodule=log
-git commit -m "Update frontend-slides to reviewed upstream revision"
-git push origin main
-```
+源项目可能有 `.gitignore` 规则忽略它自己已经跟踪的文件。提交完整快照时需检查这些文件是否遗漏；在已确认目录仅包含本次来源文件的前提下，可以对该项目目录使用 `git add -f -- skills/<name>`。
 
-其余三个项目同理。不要只改 lock 文件而不更新 gitlink，也不要只更新 gitlink 而保留过期清单。
+## 来源记录的含义
 
-## 新增项目
+- `commit`：复制时的上游版本。
+- `source_tree`：该上游提交的完整 Git 目录对象哈希。
+- `strategy`：`vendored-source-snapshots`，表示仓库内保存实际文件。
 
-先核对来源、许可、Skill 入口和实际输出格式，再通过 `git submodule add <upstream-url> skills/<name>` 添加。随后更新 README、`skills.lock.json` 与 `THIRD_PARTY_NOTICES.md`。
+最初导入的项目目录与上游的 `source_tree` 一致；如果之后修改了这些文件，它们就属于本地变体，应另外记录修改说明，不再宣称目录与上游逐字节一致。
 
-## 常见情况
+## 使用提醒
 
-- **目录是空的**：执行 `git submodule update --init --recursive`。
-- **下载 ZIP 没有 Skill 源码**：使用 README 中的递归克隆命令。
-- **想在 Agent 里自动发现 Skill**：按上游的安装方式操作；本集合的克隆不是安装动作。
-- **子模块提示 detached HEAD**：这是固定版本的正常状态；不需要为了使用而切换分支。
-- **无法访问 GitHub**：检查自己的网络和 Git 连接配置，不要把访问凭据写进仓库。
+克隆只是取得源码，不等于在 Agent 中安装 Skill。先按 README 的入口路径读取；需要长期注册时，按各项目自身说明操作。依赖、模型服务和商业授权也不因源码复制而自动配置。

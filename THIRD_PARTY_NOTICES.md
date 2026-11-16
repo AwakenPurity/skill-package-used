@@ -1,6 +1,6 @@
 # 第三方项目说明
 
-本仓库通过 Git 子模块聚合以下项目，不改写其源码或许可证。原作者的版权、许可文件与第三方通知均保留在对应上游仓库及递归克隆后的子模块内。
+本仓库将以下项目的固定版本源码直接复制到 `skills/`，不改写其原始源码或许可证。原作者的版权、许可文件与第三方通知均随实际文件保留；本次复制的完整源目录哈希记录在 `skills.lock.json` 的 `source_tree` 中。
 
 - **larashero3-dotcom/lieflat-charts**：PolyForm-Noncommercial-1.0.0。[仓库](https://github.com/larashero3-dotcom/lieflat-charts) · [所收录版本的许可](https://github.com/larashero3-dotcom/lieflat-charts/blob/4b4e75bde11cbef44263de769f3705db54bbb277/LICENSE)。
 - **op7418/guizang-ppt-skill**：AGPL-3.0。[仓库](https://github.com/op7418/guizang-ppt-skill) · [所收录版本的许可](https://github.com/op7418/guizang-ppt-skill/blob/93d21bf4a73a851907a6eb00acbf30618236667a/LICENSE)。

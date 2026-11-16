@@ -13,7 +13,7 @@
 ![Skills](https://img.shields.io/badge/Skills-4-0f766e?style=flat-square)
 ![Formats](https://img.shields.io/badge/Formats-HTML%20%7C%20SVG%20%7C%20PPTX-2563eb?style=flat-square)
 ![Language](https://img.shields.io/badge/Guide-简体中文-ea580c?style=flat-square)
-![Sources](https://img.shields.io/badge/Sources-Upstream%20Submodules-334155?style=flat-square)
+![Sources](https://img.shields.io/badge/Sources-Vendored%20Files-334155?style=flat-square)
 
 [快速选择](#choose) · [能力对比](#compare) · [项目介绍](#skills) · [开始使用](#start) · [许可与来源](#licenses)
 
@@ -23,8 +23,8 @@
 
 这是一个面向**课程制作、论文分享、技术演讲与数据汇报**的个人 Skill 集合。它们并非四个同质化的“PPT 生成器”：有的优先解决数据表达，有的重视网页演讲体验，有的以原生 PowerPoint 交付为核心。
 
-> **收录方式：Git 子模块，固定到明确的上游提交。**  
-> 本仓库保存导航、说明和版本引用；四个项目的完整源码通过递归克隆取得，未改写上游 Skill。GitHub 的 **Download ZIP 不包含子模块源码**，请使用下方命令。
+> **收录方式：源码直接复制，普通文件夹。**  
+> 四个项目的实际文件完整保存在本仓库的 `skills/` 下，包含 Skill 入口、模板、脚本、资源和许可证。**普通克隆与 Download ZIP 都包含源码**，不需要初始化子模块。
 
 <a id="choose"></a>
 ## 🎯 先选交付物，再选 Skill
@@ -102,7 +102,7 @@
 交付 HTML；需要可编辑 SVG 的图请单独确认实现方式。
 ```
 
-[上游仓库](https://github.com/larashero3-dotcom/lieflat-charts) · [固定版本 Skill 入口](https://github.com/larashero3-dotcom/lieflat-charts/blob/4b4e75bde11cbef44263de769f3705db54bbb277/SKILL.md) · [本仓库收录目录](skills/lieflat-charts)
+[上游仓库](https://github.com/larashero3-dotcom/lieflat-charts) · [本地 Skill 入口](skills/lieflat-charts/SKILL.md) · [本仓库收录目录](skills/lieflat-charts)
 
 </details>
 
@@ -123,7 +123,7 @@
 
 **边界：** 更适合由讲者带领的分享。对密集表格、阅读型培训资料和原生 PPTX 交付，不应只凭“PPT”这个名字选择它。
 
-[上游仓库](https://github.com/op7418/guizang-ppt-skill) · [固定版本 Skill 入口](https://github.com/op7418/guizang-ppt-skill/blob/93d21bf4a73a851907a6eb00acbf30618236667a/SKILL.md) · [本仓库收录目录](skills/guizang-ppt-skill)
+[上游仓库](https://github.com/op7418/guizang-ppt-skill) · [本地 Skill 入口](skills/guizang-ppt-skill/SKILL.md) · [本仓库收录目录](skills/guizang-ppt-skill)
 
 </details>
 
@@ -144,7 +144,7 @@
 
 **边界：** 这里的“PPT 转换”主要指 PPT → HTML，不是 HTML → 可编辑 PPTX；内容转换后仍需核对图表、公式、布局与动画。
 
-[上游仓库](https://github.com/zarazhangrui/frontend-slides) · [固定版本 Skill 入口](https://github.com/zarazhangrui/frontend-slides/blob/9906a34d640d2111f724544cbc50f7f130569ae1/SKILL.md) · [本仓库收录目录](skills/frontend-slides)
+[上游仓库](https://github.com/zarazhangrui/frontend-slides) · [本地 Skill 入口](skills/frontend-slides/SKILL.md) · [本仓库收录目录](skills/frontend-slides)
 
 </details>
 
@@ -167,7 +167,7 @@
 
 **边界：** 可编辑形状与可编辑数据的原生图表是不同交付；SVG 预览也不等于成品。旁白、生图与部分转换功能可能需要额外依赖或服务，按所用功能检查上游说明。
 
-[上游仓库](https://github.com/hugohe3/ppt-master) · [固定版本 Skill 入口](https://github.com/hugohe3/ppt-master/blob/3af3e8ef774c4d67ee57e1306d9256d08c9ee1bf/skills/ppt-master/SKILL.md) · [本仓库收录目录](skills/ppt-master)
+[上游仓库](https://github.com/hugohe3/ppt-master) · [本地 Skill 入口](skills/ppt-master/skills/ppt-master/SKILL.md) · [本仓库收录目录](skills/ppt-master)
 
 </details>
 
@@ -179,15 +179,11 @@
 需要先安装 Git。以下命令适用于 PowerShell、macOS 或 Linux 终端：
 
 ```bash
-git clone --recurse-submodules https://github.com/AwakenPurity/skill-package-used.git
+git clone https://github.com/AwakenPurity/skill-package-used.git
 cd skill-package-used
 ```
 
-如果已经普通克隆过本仓库，补运行：
-
-```bash
-git submodule update --init --recursive
-```
+也可以点击 GitHub 页面的 **Code → Download ZIP**，解压后使用。
 
 ### 2. 让 Agent 读取对应入口
 
@@ -213,10 +209,9 @@ git submodule update --init --recursive
 
 ```bash
 git pull --ff-only
-git submodule update --init --recursive
 ```
 
-子模块会检出固定提交，出现 detached HEAD 是正常现象。主动升级到上游新版本、核对许可并更新版本清单的流程，见 [维护说明](docs/MAINTENANCE.md)。
+项目源码已复制到本仓库，后续上游更新不会自动覆盖它们。更新快照、核对许可并同步版本记录的流程，见 [维护说明](docs/MAINTENANCE.md)。
 
 <a id="licenses"></a>
 ## 📚 来源、版本与许可
