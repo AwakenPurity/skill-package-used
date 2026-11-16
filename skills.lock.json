@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-11-16",
+  "strategy": "git-submodules",
+  "projects": [
+    {
+      "name": "lieflat-charts",
+      "path": "skills/lieflat-charts",
+      "url": "https://github.com/larashero3-dotcom/lieflat-charts.git",
+      "branch": "main",
+      "commit": "4b4e75bde11cbef44263de769f3705db54bbb277",
+      "skill_entry": "SKILL.md",
+      "license": "PolyForm-Noncommercial-1.0.0"
+    },
+    {
+      "name": "guizang-ppt-skill",
+      "path": "skills/guizang-ppt-skill",
+      "url": "https://github.com/op7418/guizang-ppt-skill.git",
+      "branch": "main",
+      "commit": "93d21bf4a73a851907a6eb00acbf30618236667a",
+      "skill_entry": "SKILL.md",
+      "license": "AGPL-3.0"
+    },
+    {
+      "name": "frontend-slides",
+      "path": "skills/frontend-slides",
+      "url": "https://github.com/zarazhangrui/frontend-slides.git",
+      "branch": "main",
+      "commit": "9906a34d640d2111f724544cbc50f7f130569ae1",
+      "skill_entry": "SKILL.md",
+      "license": "MIT"
+    },
+    {
+      "name": "ppt-master",
+      "path": "skills/ppt-master",
+      "url": "https://github.com/hugohe3/ppt-master.git",
+      "branch": "main",
+      "commit": "3af3e8ef774c4d67ee57e1306d9256d08c9ee1bf",
+      "skill_entry": "skills/ppt-master/SKILL.md",
+      "license": "MIT"
+    }
+  ]
+}

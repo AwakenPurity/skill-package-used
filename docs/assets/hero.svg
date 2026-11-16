@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="390" viewBox="0 0 1200 390" role="img" aria-labelledby="title desc">
+<title id="title">Skill Package Used</title><desc id="desc">四个 Agent Skills：数据可视化、演讲表达、网页风格探索和原生 PowerPoint。</desc>
+<rect width="1200" height="390" rx="22" fill="#10252d"/>
+<path d="M840 0H1200V160" fill="none" stroke="#24424a" stroke-width="1"/>
+<circle cx="1110" cy="70" r="112" fill="none" stroke="#24424a" stroke-width="1"/>
+<circle cx="1110" cy="70" r="76" fill="none" stroke="#24424a" stroke-width="1"/>
+<path d="M1024 70H1196M1110 0V156" stroke="#24424a" stroke-width="1"/>
+<rect x="44" y="32" width="212" height="28" rx="14" fill="#b8efd4"/>
+<text x="60" y="51" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" fill="#12332c">CURATED AGENT SKILLS</text>
+<text x="42" y="121" font-family="Arial,sans-serif" font-size="52" font-weight="700" letter-spacing="-1" fill="#f6f3e9">Skill Package Used</text>
+<text x="46" y="163" font-family="Microsoft YaHei,Arial,sans-serif" font-size="23" fill="#b8cbd0">从数据表达，到网页演示，再到原生 PowerPoint 交付。</text>
+<g font-family="Arial,Microsoft YaHei,sans-serif">
+<rect x="44" y="205" width="265" height="140" rx="12" fill="#19353e" stroke="#36535c"/>
+<rect x="326" y="205" width="265" height="140" rx="12" fill="#19353e" stroke="#36535c"/>
+<rect x="608" y="205" width="265" height="140" rx="12" fill="#19353e" stroke="#36535c"/>
+<rect x="890" y="205" width="265" height="140" rx="12" fill="#19353e" stroke="#36535c"/>
+<g fill="#b8efd4"><rect x="66" y="243" width="7" height="15" rx="1"/><rect x="78" y="232" width="7" height="26" rx="1"/><rect x="90" y="221" width="7" height="37" rx="1"/></g>
+<g fill="none" stroke="#f4b28d" stroke-width="2"><rect x="348" y="225" width="34" height="26" rx="2"/><path d="M365 251V258M355 259H375M354 232H369M354 239H376"/></g>
+<g fill="none" stroke="#aac9ff" stroke-width="2"><rect x="630" y="223" width="35" height="29" rx="3"/><path d="M630 231H665M638 227H640M643 227H645M639 239L635 242L639 245M656 239L660 242L656 245"/></g>
+<g fill="none" stroke="#e4cff7" stroke-width="2"><rect x="914" y="223" width="28" height="34" rx="2"/><path d="M932 223V232H942M920 240H936M920 247H932"/></g>
+<text x="66" y="289" font-size="21" font-weight="700" fill="#f6f3e9">lieflat-charts</text>
+<text x="348" y="289" font-size="21" font-weight="700" fill="#f6f3e9">guizang-ppt-skill</text>
+<text x="630" y="289" font-size="21" font-weight="700" fill="#f6f3e9">frontend-slides</text>
+<text x="912" y="289" font-size="21" font-weight="700" fill="#f6f3e9">ppt-master</text>
+<text x="66" y="319" font-size="16" fill="#b8cbd0">数据 · 图表 · 报告</text>
+<text x="348" y="319" font-size="16" fill="#b8cbd0">风格 · 演讲 · 排练</text>
+<text x="630" y="319" font-size="16" fill="#b8cbd0">预览 · 设计 · 网页</text>
+<text x="912" y="319" font-size="16" fill="#b8cbd0">课件 · 模板 · PPTX</text>
+<text x="1154" y="373" text-anchor="end" font-size="11" letter-spacing="2" fill="#77949f">AWAKENPURITY / TOOLKIT</text>
+</g></svg>
